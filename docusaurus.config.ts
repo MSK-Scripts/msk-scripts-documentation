@@ -82,14 +82,14 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Dokumentation',
+          label: 'FiveM Ressources',
         },
         {
           type: 'docSidebar',
           sidebarId: 'discordSidebar',
           docsPluginId: 'discord',
           position: 'left',
-          label: 'Discord',
+          label: 'Discord Bots',
         },
         {
           type: 'docSidebar',
