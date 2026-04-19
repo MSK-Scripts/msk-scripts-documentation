@@ -6,10 +6,17 @@ import styles from './styles.module.css';
 
 const columns = [
   {
-    title: 'Resources',
+    title: 'Discord Bots',
     links: [
-      { label: 'Discord Ticketbot', to: '/docs/discord_ticketbot/getting-started' },
-      { label: 'MSK Core', to: '/docs/msk_core/getting-started' },
+      { label: 'Discord Ticketbot', to: '/discord/discord_ticketbot/getting-started' },
+    ],
+  },
+  {
+    title: 'FiveM Resources',
+    links: [
+      { label: 'MSK Core', to: '/docs/msk_core/' },
+      { label: 'MSK Handcuffs', to: '/docs/msk_handcuffs/' },
+      { label: 'MSK VehicleKeys', to: '/docs/msk_vehiclekeys/' },
     ],
   },
   {

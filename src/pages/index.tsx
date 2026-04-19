@@ -57,7 +57,7 @@ const resources: Resource[] = [
     badges: ['Javascript'],
     description:
       'A Dicord ticketbot, allowing players to create support tickets directly from Discord.',
-    to: '/docs/discord_ticketbot/getting-started',
+    to: '/discord/discord_ticketbot/getting-started',
     features: ['Installation', 'Configuration'],
   },
   {

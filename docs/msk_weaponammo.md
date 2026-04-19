@@ -1,6 +1,6 @@
 ---
 title: MSK WeaponAmmo
-sidebar_position: 15
+sidebar_position: 14
 ---
 
 # MSK WeaponAmmo

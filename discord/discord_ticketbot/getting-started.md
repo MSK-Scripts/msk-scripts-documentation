@@ -4,7 +4,7 @@ description: Getting Started
 sidebar_position: 1
 ---
 
-# 🎫 Discord Ticket Bot
+![Discord Ticket Bot](/img/discord_ticketbot_banner.png)
 
 A modern, self-hosted Discord ticket bot built on **Discord.js v14** and **SQLite** — no external database, no telemetry, full feature set out of the box.
 

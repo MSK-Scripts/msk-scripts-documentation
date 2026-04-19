@@ -35,6 +35,16 @@ const config: Config = {
         editUrl: 'https://github.com/MSK-Scripts/msk-scripts-documentation/tree/main/',
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'discord',
+        path: 'discord',
+        routeBasePath: 'discord',
+        sidebarPath: './sidebars-discord.ts',
+        editUrl: 'https://github.com/MSK-Scripts/msk-scripts-documentation/tree/main/',
+      },
+    ],
   ],
 
   presets: [
@@ -76,6 +86,13 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'discordSidebar',
+          docsPluginId: 'discord',
+          position: 'left',
+          label: 'Discord',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'guidesSidebar',
           docsPluginId: 'guides',
           position: 'left',
@@ -111,6 +128,10 @@ const config: Config = {
             {
               label: 'Guides',
               to: '/guides',
+            },
+            {
+              label: 'Discord',
+              to: '/discord',
             },
           ],
         },
