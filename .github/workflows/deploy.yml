@@ -1,0 +1,46 @@
+name: Deploy Docusaurus to Webserver
+
+on:
+  push:
+    branches:
+      - main # Startet das Deployment, wenn Code in 'main' gepusht wird
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: 📦 Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: 🏗️ Build Project
+        run: yarn build
+
+      - name: 🚀 Deploy to Server via SFTP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          source: "build/*"
+          target: "/var/www/html/docs_msk-scripts/"
+          strip_components: 1
+
+      - name: 🛠️ Setze Datei-Besitzer auf www-data
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          script: |
+            chown -R www-data:www-data /var/www/html/docs_msk-scripts/
