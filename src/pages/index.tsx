@@ -62,7 +62,7 @@ const resources: Resource[] = [
   },
   {
     title: 'MSK Core',
-    image: '/img/logo.png',
+    image: '/img/msk_core_banner.png',
     badges: ['Standalone'],
     description:
       'Our core library for our resources, providing common utilities, and more.',

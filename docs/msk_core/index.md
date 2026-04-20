@@ -3,7 +3,7 @@ title: MSK Core
 sidebar_position: 1
 ---
 
-# MSK Core
+![MSK Core](/img/msk_core_banner.png)
 
 **[STANDALONE]** Functions for MSK Scripts
 

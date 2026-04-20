@@ -65,7 +65,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/msk-scripts-social-card.jpg',
+    image: 'img/msk_core_banner.png',
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
