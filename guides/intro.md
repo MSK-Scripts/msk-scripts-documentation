@@ -3,9 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Guides
-
-Welcome to the Guides section of the MSK Scripts Documentation.
+# Welcome to MSK Scripts Guides
 
 Here you'll find step-by-step instructions, tips and best practices for MSK Scripts resources — from initial setup to advanced customisation.
 
