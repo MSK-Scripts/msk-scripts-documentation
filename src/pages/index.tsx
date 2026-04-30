@@ -12,7 +12,7 @@ import styles from './index.module.css';
 /* function Hero() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={styles.hero} style={{ backgroundImage: 'url("/img/msk_scripts_banner.png")', backgroundSize: 'cover', backgroundPosition: 'center', }}>
+    <header className={styles.hero} style={{ backgroundImage: `url("${siteConfig.themeConfig.heroImage}")`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
       <div className={styles.heroInner}>
         <img
           src="img/logo.png"
@@ -40,11 +40,13 @@ import styles from './index.module.css';
 } */
 
 function Hero() {
+  const { siteConfig } = useDocusaurusContext();
+
   return (
     <header
       className={styles.hero}
       style={{
-        backgroundImage: 'url("/img/msk_scripts_banner.png")',
+        backgroundImage: `url("${siteConfig.themeConfig.heroImage}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '34vh',
