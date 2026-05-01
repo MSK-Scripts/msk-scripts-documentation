@@ -148,16 +148,86 @@
   font-weight: 600;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
-  background: var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-darkest);
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  /* default fallback */
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
 }
 
-[data-theme='dark'] .cardBadge {
-  background: var(--ifm-color-primary-darkest);
-  color: var(--ifm-color-primary-lightest);
+/* ── Badge colors per technology ── */
+
+/* ESX — orange-red */
+.cardBadge[data-badge="ESX"] {
+  background: #fff0e6;
+  color: #c94a00;
+}
+[data-theme='dark'] .cardBadge[data-badge="ESX"] {
+  background: #3d1a00;
+  color: #ff874d;
+}
+
+/* QBCore — violet */
+.cardBadge[data-badge="QBCore"] {
+  background: #f0edff;
+  color: #5b3fcf;
+}
+[data-theme='dark'] .cardBadge[data-badge="QBCore"] {
+  background: #1f1545;
+  color: #a68fff;
+}
+
+/* Lua — dark blue */
+.cardBadge[data-badge="Lua"] {
+  background: #e8eeff;
+  color: #1a3a8f;
+}
+[data-theme='dark'] .cardBadge[data-badge="Lua"] {
+  background: #0d1f4d;
+  color: #7fa3ff;
+}
+
+/* JavaScript — classic yellow */
+.cardBadge[data-badge="Javascript"],
+.cardBadge[data-badge="JavaScript"] {
+  background: #fefac0;
+  color: #7a6000;
+}
+[data-theme='dark'] .cardBadge[data-badge="Javascript"],
+[data-theme='dark'] .cardBadge[data-badge="JavaScript"] {
+  background: #3d3000;
+  color: #f7df1e;
+}
+
+/* Discord — blurple */
+.cardBadge[data-badge="Discord"] {
+  background: #edefff;
+  color: #3b45c4;
+}
+[data-theme='dark'] .cardBadge[data-badge="Discord"] {
+  background: #1a1d4d;
+  color: #8891ff;
+}
+
+/* FiveM — red */
+.cardBadge[data-badge="FiveM"] {
+  background: #ffecec;
+  color: #b91c1c;
+}
+[data-theme='dark'] .cardBadge[data-badge="FiveM"] {
+  background: #3d0a0a;
+  color: #ff7070;
+}
+
+/* Standalone — neutral gray */
+.cardBadge[data-badge="Standalone"] {
+  background: #f0f0f0;
+  color: #444;
+}
+[data-theme='dark'] .cardBadge[data-badge="Standalone"] {
+  background: #2a2a2a;
+  color: #ccc;
 }
 
 .cardDescription {

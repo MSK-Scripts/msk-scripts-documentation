@@ -118,7 +118,7 @@ function ResourceCard({ title, image, badges, description, to, features }: Resou
           </Heading>
           <div className={styles.cardBadges}>
             {badges.map((b) => (
-              <span key={b} className={styles.cardBadge}>{b}</span>
+              <span key={b} className={styles.cardBadge} data-badge={b}>{b}</span>
             ))}
           </div>
         </div>
