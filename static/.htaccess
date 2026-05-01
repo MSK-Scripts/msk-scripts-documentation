@@ -52,7 +52,7 @@ ErrorDocument 404 /404.html
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
     # Kamera, Mikrofon, etc. deaktivieren sofern nicht benötigt
-    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=()"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
 
     # Cross-Origin Policies
     Header always set Cross-Origin-Opener-Policy "same-origin"
@@ -67,15 +67,14 @@ ErrorDocument 404 /404.html
     Header always set Content-Security-Policy "\
     default-src 'self'; \
     script-src 'self' 'unsafe-inline' 'unsafe-eval'; \
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
-    font-src 'self' https://fonts.gstatic.com; \
+    style-src 'self' 'unsafe-inline'; \
+    font-src 'self'; \
     img-src 'self' data: https:; \
     object-src 'none'; \
     connect-src 'self'; \
     frame-ancestors 'none'; \
     base-uri 'self'; \
     form-action 'self';"
-    upgrade-insecure-requests;"
 
     # Apache Versions-Info unterdrücken (soweit per .htaccess möglich)
     Header always unset X-Powered-By
