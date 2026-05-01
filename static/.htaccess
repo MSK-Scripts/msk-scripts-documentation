@@ -7,6 +7,34 @@
     Require all denied
 </FilesMatch>
 
+# ─── Verzeichnislisting deaktivieren ───────────────────────────────────────────
+# KRITISCH: Verhindert dass Apache Ordnerinhalte anzeigt wenn kein index.html vorhanden
+Options -Indexes
+
+# ─── Zugriff auf sensible Dateien/Verzeichnisse sperren ────────────────────────
+<FilesMatch "(^\.|\.(git|env|log|bak|sql|conf|key|pem|crt))">
+    Require all denied
+</FilesMatch>
+
+# ─── Custom 404 ──────────────────────────────────────────────────────────
+
+# Leitet Apache-404 auf die von Docusaurus generierte 404.html weiter
+ErrorDocument 404 /404.html
+
+# Stellt sicher dass direkte URL-Aufrufe (z.B. /docs/xyz) korrekt
+# an Docusaurus weitergeleitet werden statt Apache-404 zu zeigen
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Bereits existierende Dateien und Ordner direkt ausliefern
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Docusaurus 404-Seite ausliefern (mit korrektem HTTP 404 Status)
+    RewriteRule ^ /404.html [L]
+</IfModule>
+
 # ─── Security Headers ──────────────────────────────────────────────────────────
 
 <IfModule mod_headers.c>
@@ -24,7 +52,7 @@
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
     # Kamera, Mikrofon, etc. deaktivieren sofern nicht benötigt
-    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=()"
 
     # Cross-Origin Policies
     Header always set Cross-Origin-Opener-Policy "same-origin"
@@ -32,20 +60,26 @@
     Header always set Cross-Origin-Resource-Policy "same-origin"
 
     # Content Security Policy
+    # Hinweis: 'unsafe-inline' für Scripts ist nötig da Docusaurus inline Scripts
     # - 'unsafe-inline' für Styles ist nötig da Docusaurus inline CSS injiziert
     # - 'unsafe-inline' + 'unsafe-eval' für Scripts wegen Docusaurus Runtime
     # - cdn.jsdelivr.net & fonts für externe Assets
     Header always set Content-Security-Policy "\
     default-src 'self'; \
     script-src 'self' 'unsafe-inline' 'unsafe-eval'; \
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; \
-    font-src 'self' https://fonts.gstatic.com; \
+    style-src 'self' 'unsafe-inline'; \
+    font-src 'self'; \
     img-src 'self' data: https:; \
     object-src 'none'; \
     connect-src 'self'; \
     frame-ancestors 'none'; \
     base-uri 'self'; \
     form-action 'self';"
+    upgrade-insecure-requests;"
+
+    # Apache Versions-Info unterdrücken (soweit per .htaccess möglich)
+    Header always unset X-Powered-By
+    Header always unset Server
 
 </IfModule>
 
