@@ -184,8 +184,9 @@ function InfoBanner() {
           </div>
           <div className={styles.infoBannerActions}>
             <Link
-              className="button button--primary button--lg"
+              className="button button--lg"
               href="https://discord.gg/5hHSBRHvJE"
+              style={{ backgroundColor: '#5865F2', borderColor: '#5865F2', color: '#fff' }}
             >
               Join Discord
             </Link>

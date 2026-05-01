@@ -102,7 +102,7 @@ const config: Config = {
         },
         {
           href: 'https://www.msk-scripts.de',
-          label: 'Tebex',
+          label: 'Shop',
           position: 'right',
         },
         {
@@ -141,7 +141,7 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Tebex',
+              label: 'Shop',
               href: 'https://www.msk-scripts.de',
             },
             {

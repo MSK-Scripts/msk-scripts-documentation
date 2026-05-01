@@ -23,7 +23,7 @@ const columns = [
   {
     title: 'Community',
     links: [
-      { label: 'Tebex', to: 'https://www.msk-scripts.de' },
+      { label: 'Shop', to: 'https://www.msk-scripts.de' },
       { label: 'GitHub', to: 'https://github.com/MSK-Scripts' },
       { label: 'Discord', to: 'https://discord.gg/5hHSBRHvJE' },
     ],
