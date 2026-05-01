@@ -1,0 +1,88 @@
+/* ─── Legal Page Layout ─────────────────────────────────────────────────────── */
+
+.legalPage {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ─── Language Switcher ─────────────────────────────────────────────────────── */
+
+.langSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  justify-content: flex-end;
+}
+
+.langLabel {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.langSelect {
+  appearance: none;
+  padding: 0.35rem 2rem 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.langSelect:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.langSelect:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(38, 112, 10, 0.15);
+}
+
+/* ─── Content ───────────────────────────────────────────────────────────────── */
+
+.legalContent h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.75rem;
+}
+
+.legalContent h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-primary);
+}
+
+.legalContent h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legalContent p {
+  line-height: 1.75;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 0.85rem;
+}
+
+.legalContent a {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+}
+
+.legalContent a:hover {
+  color: var(--ifm-color-primary-dark);
+}

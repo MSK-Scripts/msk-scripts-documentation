@@ -132,7 +132,7 @@ const config: Config = {
               to: '/guides',
             },
             {
-              label: 'Discord',
+              label: 'Discord Bots',
               to: '/discord',
             },
           ],
@@ -145,13 +145,30 @@ const config: Config = {
               href: 'https://www.msk-scripts.de',
             },
             {
+              label: 'GitHub',
+              href: 'https://github.com/MSK-Scripts',
+            },
+            {
               label: 'Discord',
               href: 'https://discord.gg/5hHSBRHvJE',
             },
           ],
         },
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Impressum',
+              to: '/impressum',
+            },
+            {
+              label: 'Datenschutz',
+              to: '/datenschutz',
+            },
+          ],
+        },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} MSK Scripts`,
+      copyright: `Copyright © ${new Date().getFullYear()} MSK Scripts · <a href="/impressum" style="color:inherit;text-decoration:none;">Impressum</a> · <a href="/datenschutz" style="color:inherit;text-decoration:none;">Datenschutz</a>`,
     },
     prism: {
       theme: prismThemes.github,

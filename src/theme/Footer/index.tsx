@@ -78,15 +78,11 @@ export default function Footer(): ReactNode {
         <p className={styles.copyright}>
           Copyright © {new Date().getFullYear()} MSK Scripts. All rights reserved.
         </p>
-        <p className={styles.disclaimer}>
-          <Link className={styles.disclaimer} to="/impressum">
-            Impressum
-          </Link>
-            |
-          <Link className={styles.disclaimer} to="/datenschutz">
-            Datenschutz
-          </Link>
-        </p>
+        <div className={styles.legalLinks}>
+          <Link className={styles.legalLink} to="/impressum">Impressum</Link>
+          <span className={styles.legalDivider}>·</span>
+          <Link className={styles.legalLink} to="/datenschutz">Datenschutz</Link>
+        </div>
       </div>
     </footer>
   );
